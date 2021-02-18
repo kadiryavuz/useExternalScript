@@ -11,8 +11,7 @@ class Testy {
     console.log("initialized..");
 
     this.testButton.addEventListener("click", () => {
-    store.dispatch(play({ value: 1 }));
-        
+      store.dispatch(play({ value: 1 }));
     });
   }
 }
