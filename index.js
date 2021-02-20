@@ -6,5 +6,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
     
     window.TestyJS = new Testy(config);
-    window.TestyJS.init();
+
+    //demonstrating script ready condition
+    setTimeout(() => {
+        window.TestyJS.connect();
+    }, 3000);
+
+    window.TestyJS.on('testyConnected', (data) => {
+        console.log("TestyJS is fully connected: ", data);
+        TestyJS.init();
+    })
+   
 });
+
+
+

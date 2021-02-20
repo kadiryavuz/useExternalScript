@@ -1,6 +1,6 @@
 import store from "./store";
 import { play } from "./reducers/gameReducer";
-import Events from './events';
+import Events from "./events";
 
 class Testy {
   constructor(data) {
@@ -9,10 +9,19 @@ class Testy {
     this.eventHandler = new Events();
   }
 
+  connect() {
+    this.eventHandler.fire("testyConnected");
+  }
+
+  on(type, func) {
+    this.eventHandler.addListeners(type, func);
+
+    return this;
+  }
+
   init() {
     console.log("initialized..");
-    this.eventHandler.init();
-    
+
     this.testButton.addEventListener("click", () => {
       store.dispatch(play({ value: 1 }));
     });
