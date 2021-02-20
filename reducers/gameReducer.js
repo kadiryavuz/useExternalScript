@@ -17,6 +17,9 @@ export const gameSlice = createSlice({
       console.log("Action incoming: ", action);
       state.data.totalMoves = state.data.totalMoves + action.payload.value;
     },
+    changeStatus: (state, action) => {
+      state.status = action.payload.value;
+    },
     onMessage: {
       reducer(state, action) {
         state.errors.push(action.payload);
@@ -32,9 +35,10 @@ export const gameSlice = createSlice({
   },
 });
 
-export const { play, onMessage } = gameSlice.actions;
+export const { play, changeStatus, onMessage } = gameSlice.actions;
 
 export const selectData = (state) => state.data;
 export const selectMessage = (state) => state.message;
+export const selectStatus = (state) => state.status;
 
 export default gameSlice.reducer;

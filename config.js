@@ -1,7 +1,9 @@
 export const GameStatus = {
   IDLE: 0,
-  PLAY: 1,
+  PLAYED: 1,
   FINISHED: 2,
+  LOADING: 3,
+  READYTOPLAY: 4
 };
 
 export const GameResult = {

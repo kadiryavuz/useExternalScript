@@ -1,5 +1,5 @@
 import store from "./store";
-import { play } from "./reducers/gameReducer";
+import { play, changeStatus } from "./reducers/gameReducer";
 import Events from "./events";
 
 class Testy {
@@ -7,6 +7,10 @@ class Testy {
     this.data = data;
     this.testButton = document.querySelector("#testButton");
     this.eventHandler = new Events();
+  }
+
+  setStatus(param) {
+    store.dispatch(changeStatus({value: param}));
   }
 
   connect() {
