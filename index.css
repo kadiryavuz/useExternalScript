@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gameBox-container {
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
+
+button {
+    height: 2rem;
+    background-color: white;
+    border-radius: 5px;
+
+}

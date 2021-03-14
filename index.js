@@ -1,7 +1,7 @@
 import Testy from "./plugin";
 import { GameStatus } from './config';
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     const config = {
         gameField: 'gameBox'
     }
@@ -14,10 +14,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }, 3000);
 
     window.TestyJS.on('testyConnected', (data) => {
-        console.log("TestyJS is fully connected: ", data);
+        console.log("window.TestyJS is fully connected: ", data);
         window.TestyJS.setStatus(GameStatus.READYTOPLAY);
-        TestyJS.init();
+        window.TestyJS.init();
     })
+
+    // TODO: set following when client clicked to play 
+    // window.TestyJS.setStatus(GameStatus.READYTOPLAY);
    
 });
 
